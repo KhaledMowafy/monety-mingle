@@ -129,3 +129,49 @@
     border:none;
     border-radius:5px;
 }
+
+
+   /* For mobile phones: */
+@media only screen and (max-width: 768px) {
+ 
+    .currency-exchanger .currency-exchanger_container .currency-exchanger__card-item{
+        width:50% !important;
+        margin-left:0 !important;
+        margin-bottom:20px;
+
+    }
+    .currency-exchanger .currency-exchanger_container .currency-exchanger__card-item input{
+        width:100% !important;
+      
+    }
+    .currency-exchanger__card{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .currency-exchanger__card-select{
+        width:90%;
+    }
+    .currency-exchanger__convert--item{
+        width:90%;
+    }
+    .currency-exchanger__convert{
+        justify-content: center;
+    }
+    
+    .currency-exchanger__info{
+        flex-direction: column;
+    }
+    .currency-exchanger__info_exchange{
+        width:90%;
+        margin-bottom:20px;
+    }
+    .currency-exchanger__info_currency{
+        width:90%;
+        margin-bottom:20px;
+    }
+    .currency-exchanger__info_button{
+        width:90%;
+        
+    }
+  }

@@ -6,7 +6,7 @@ function Navbar() {
    <>
     <nav className="navbar">
        <img src={logo} alt="money-mingle logo"/>
-       <div>
+       <div className="navbar__container">
             <button className="navbar_button">
                 <span>EUR - USD Details</span>
             </button>
