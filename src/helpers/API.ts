@@ -1,20 +1,20 @@
 import axios from 'axios';
 
-const BASE_URL = '';
+const BASE_URL = 'http://data.fixer.io/api/';
+const API_KEY = 'f3511db949ef755c258a3238cccb11bb';
+
 
 const API = {
 
     
-    readAll: async (path:string) => {
+    readAll: async (path:string, query:string) => {
         try {
-            const token = localStorage.getItem("accessToken");
             const authAxios = axios.create({
                 headers: {
                     'Accept': 'application/json',
-                    'Authorization': `Bearer ${token}`
                 }
             })
-            const response = await authAxios.get(`${BASE_URL}${path}`)
+            const response = await authAxios.get(`${BASE_URL}${path}?access_key=${API_KEY}${query}`)
             return response.data;
         } catch (err:unknown) {
             return err;
@@ -22,11 +22,9 @@ const API = {
     },
 
     read: async (path:string, id:number) => {
-        const token = localStorage.getItem("accessToken");
         const authAxios = axios.create({
             headers: {
                 'Accept': 'application/json',
-                'Authorization': `Bearer ${token}`
             }
         })
 
@@ -38,11 +36,9 @@ const API = {
         }
     },
     create: async (path:string, data:object) => {
-        const token = localStorage.getItem("accessToken");
         const authAxios = axios.create({
             headers: {
                 'Accept': 'application/json',
-                'Authorization': `Bearer ${token}`
             }
         })
 
@@ -54,11 +50,9 @@ const API = {
         }
     },
     update: async (path:string, data:object, id:string) => {
-        const token = localStorage.getItem("accessToken");
         const authAxios = axios.create({
             headers: {
                 'Accept': 'application/json',
-                'Authorization': `Bearer ${token}`
             }
         })
 
@@ -70,11 +64,9 @@ const API = {
         }
     },
     delete: async (path:string, data:object) => {
-        const token = localStorage.getItem("accessToken");
         const authAxios = axios.create({
             headers: {
                 'Accept': 'application/json',
-                'Authorization': `Bearer ${token}`
             }
         })
 
