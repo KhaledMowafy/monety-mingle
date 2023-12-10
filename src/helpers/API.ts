@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://data.fixer.io/api/';
-const API_KEY = 'f3511db949ef755c258a3238cccb11bb';
+const BASE_URL = 'https://api.currencybeacon.com/v1';
+const API_KEY = '1ZpkQEGWWW75FB0WpnCFm2X9fWA5XjNk';
 
 
 const API = {
@@ -14,7 +14,7 @@ const API = {
                     'Accept': 'application/json',
                 }
             })
-            const response = await authAxios.get(`${BASE_URL}${path}?access_key=${API_KEY}${query}`)
+            const response = await authAxios.get(`${BASE_URL}${path}?api_key=${API_KEY}&${query}`)
             return response.data;
         } catch (err:unknown) {
             return err;

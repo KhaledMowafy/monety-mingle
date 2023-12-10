@@ -8,12 +8,12 @@ import API from '../../helpers/API';
 function CurrencyExchanger() {
   const [currencies, setCurrencies] = useState<string[]>([]);
   const [amount, setAmount] = useState<number>(0);
-  const [from, setFrom] = useState<string>('EUR');
-  const [to, setTo] = useState<string>('AED');
+  const [from, setFrom] = useState<string>('USD');
+  const [to, setTo] = useState<string>('PLN');
   const [convertedAmount, setConvertedAmount] = useState<number>(0);
 
   useEffect(()=>{
-    API.readAll('latest', '').then((response)=>{
+    API.readAll('/latest', '').then((response)=>{
       const currenciesArr = Object.keys(response.rates);
       currenciesArr.unshift(response.base)
       setCurrencies(currenciesArr)
@@ -23,8 +23,8 @@ function CurrencyExchanger() {
   },[])
 
   const handleConvert = ()=>{
-    API.readAll('convert', `&from=${from}&to=${to}&amount=${amount}`).then((response)=>{
-      setConvertedAmount(response.query.amount)
+    API.readAll('/convert', `&from=${from}&to=${to}&amount=${amount}`).then((response)=>{
+      setConvertedAmount(response.value)
     }).catch((err)=>{
       console.log(err)
   })
@@ -36,7 +36,7 @@ function CurrencyExchanger() {
         <div className="currency-exchanger_container">
           <Exchange currencies={currencies} setAmount={setAmount} setFrom={setFrom} setTo={setTo}/>
           <Convert amount={amount} handleConvert={handleConvert}/>
-          <Info convertedAmount={convertedAmount}/>
+          <Info convertedAmount={convertedAmount} from={from} to={to} amount={amount}/>
         </div>
       </div>
     </>
