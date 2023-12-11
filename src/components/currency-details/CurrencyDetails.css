@@ -1,0 +1,11 @@
+.currency-details{
+   display:flex;
+   justify-content: space-between;
+   margin-top:20px;
+}
+.currency-details__card{
+    background-color: #CCE2B0;
+    padding:20px;
+    width:30%;
+    height:30%
+}

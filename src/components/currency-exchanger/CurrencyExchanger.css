@@ -29,8 +29,6 @@
 .currency-exchanger .currency-exchanger_container .currency-exchanger__card-item input:active{
     border:none;
     background-color: #92a17e;
-    text-align: center;
-   
 }
 .currency-exchanger__card-select{
     display: flex;
