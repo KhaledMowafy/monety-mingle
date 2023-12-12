@@ -9,6 +9,8 @@ function Convert({amount, handleConvert}: Iprops) {
    handleConvert(amount)
   };
 
+  console.log(amount)
+
   return (
     <>
          <div className="currency-exchanger__convert">

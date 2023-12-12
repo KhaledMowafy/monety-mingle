@@ -109,6 +109,10 @@
     border-radius:5px;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .currency-exchanger__info_button:hover{
     background-color: #365b37;
@@ -116,6 +120,9 @@
 }
 .currency-exchanger__info_button:active{
     transform: scaleX(0.9);
+}
+.currency-exchanger__info_button:visited{
+   color:black;
 }
 
 .currency-exchanger__info_currency{
