@@ -135,7 +135,11 @@
     border-radius:5px;
 }
 
-
+.details-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
    /* For mobile phones: */
 @media only screen and (max-width: 768px) {
  

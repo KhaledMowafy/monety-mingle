@@ -9,7 +9,6 @@ function Convert({amount, handleConvert}: Iprops) {
    handleConvert(amount)
   };
 
-  console.log(amount)
 
   return (
     <>

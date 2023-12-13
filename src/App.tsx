@@ -3,8 +3,8 @@ import './App.css'
 import {useState} from 'react'
 import Navbar from './components/navbar/Navbar'
 import Home from './pages/home/Home'
-import Details from './pages/details/details'
 import { MyGlobalContext } from './helpers/Context'
+import Details from './pages/details/Details'
 
 function App() {
   const [to, setTo] = useState<string>('USD')
@@ -30,7 +30,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Home />}/>
-          <Route path="/details" element={<Details />}/>
+          <Route path="/details/:id" element={<Details />}/>
         </Routes>
      </Router>
      </MyGlobalContext.Provider>

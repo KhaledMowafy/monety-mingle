@@ -6,7 +6,8 @@ type Iprops = {
   setTo: (c: string) => void;
   amount:number,
   from:string,
-  to:string
+  to:string,
+  id?:string
 };
 
 export default function Exchange({
@@ -16,7 +17,8 @@ export default function Exchange({
   setFrom,
   setTo,
   from,
-  to
+  to,
+  id
 }: Iprops) {
   const handleAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(parseInt(e.target.value));
@@ -43,7 +45,7 @@ export default function Exchange({
         <div className="currency-exchanger__card-select">
           <div className="currency-exchanger__select">
             <label htmlFor="amount">From</label>
-            <select onChange={handleFrom}>
+            <select onChange={handleFrom} disabled={id!==undefined?true:false}>
               {currencies.map((item, index) =>
                 index === 0 ? (
                   <option hidden key={index}>
